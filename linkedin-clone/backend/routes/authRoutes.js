@@ -5,7 +5,7 @@ import User from '../models/User.js';
 
 const router = express.Router();
 
-router.post('/signup', async (req, res) => {
+router.post('/auth/signup', async (req, res) => {
   try {
     const { name, email, password } = req.body;
     if (!name || !email || !password) return res.status(400).json({ message: 'Missing fields' });
@@ -25,7 +25,7 @@ router.post('/signup', async (req, res) => {
 
 
 
-router.post('/login', async (req, res) => {
+router.post('/auth/login', async (req, res) => {
   try {
     const { email, password } = req.body;
     const user = await User.findOne({ email });
