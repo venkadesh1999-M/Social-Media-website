@@ -9,10 +9,10 @@ dotenv.config();
 const app = express();
 connectDB();
 
-const allowedOrigin = 'https://amazing-salmiakki-25eb69.netlify.app'; 
+// const allowedOrigin = 'https://amazing-salmiakki-25eb69.netlify.app'; 
 
 app.use(cors({
-    origin: allowedOrigin,
+    origin: "*",
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
 }));
